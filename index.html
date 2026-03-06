@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>越境EC向けコマースプラットフォーム</title>
+  <meta name="description" content="越境EC向けマルチテナント型コマース・プラットフォーム。日本企業向けに安心・シンプルなUIを提供します。" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- OG tags -->
+  <meta property="og:title" content="越境EC向けコマースプラットフォーム" />
+  <meta property="og:description" content="越境EC向けマルチテナント型コマース・プラットフォーム。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://example.com" />
+  <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=Cross-border+Commerce" />
+
+  <!-- Tailwind CDN（開発用） -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f5f7fb;
+    }
+    .glass-card {
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 18px 45px rgba(15,23,42,0.08);
+    }
+    .fade-in {
+      animation: fadeIn 0.35s ease-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="text-slate-800">
+
+  <!-- 上部グローバルナビゲーション -->
+  <header class="border-b border-slate-200 bg-white/80 backdrop-blur">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+      <div class="flex items-center gap-2">
+        <div class="h-8 w-8 rounded-lg bg-blue-600 flex items-center justify-center text-white text-xs font-semibold">
+          EC
+        </div>
+        <span class="font-semibold tracking-tight text-slate-900">
+          越境ECプラットフォーム
+        </span>
+      </div>
+
+      <nav class="flex items-center gap-6 text-sm">
+        <button data-main-tab="company" class="main-tab text-slate-500 hover:text-slate-900 border-b-2 border-transparent pb-1">
+          企業サイト
+        </button>
+        <button data-main-tab="dashboard" class="main-tab text-slate-500 hover:text-slate-900 border-b-2 border-transparent pb-1">
+          販売者ダッシュボード
+        </button>
+        <button data-main-tab="shop" class="main-tab text-slate-500 hover:text-slate-900 border-b-2 border-transparent pb-1">
+          商品公開サイト
+        </button>
+
+        <!-- 多言語選択（文言はすべて日本語） -->
+        <div class="flex items-center gap-2 ml-4 text-xs border border-slate-200 rounded-full px-2 py-1 bg-slate-50">
+          <span class="text-slate-400">表示言語</span>
+          <button data-lang="ja" class="lang-btn px-2 py-0.5 rounded-full bg-blue-600 text-white">日本語</button>
+          <button data-lang="en" class="lang-btn px-2 py-0.5 rounded-full text-slate-600 hover:bg-slate-100">英語</button>
+          <button data-lang="zh-CN" class="lang-btn px-2 py-0.5 rounded-full text-slate-600 hover:bg-slate-100">中国語（簡体字）</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10">
+
+    <!-- ============================= -->
+    <!-- 3.1 企業サイト（Company Site） -->
+    <!-- ============================= -->
+    <section id="company-section" class="fade-in">
+
+      <!-- サブナビ（擬似的なルーティング） -->
+      <div class="mb-6 flex flex-wrap items-center justify-between gap-4">
+        <div class="text-sm text-slate-500">
+          公開サイト（企業向け情報）
+        </div>
+        <div class="flex flex-wrap gap-2 text-sm">
+          <button data-company-tab="home" class="company-tab px-3 py-1 rounded-full bg-slate-900 text-white">ホーム</button>
+          <button data-company-tab="company" class="company-tab px-3 py-1 rounded-full text-slate-700 hover:bg-slate-100">
+            会社案内
+          </button>
+          <button data-company-tab="services" class="company-tab px-3 py-1 rounded-full text-slate-700 hover:bg-slate-100">
+            サービス
+          </button>
+          <button data-company-tab="cases" class="company-tab px-3 py-1 rounded-full text-slate-700 hover:bg-slate-100">
+            導入事例
+          </button>
+          <button data-company-tab="contact" class="company-tab px-3 py-1 rounded-full text-slate-700 hover:bg-slate-100">
+            お問い合わせ
+          </button>
+        </div>
+      </div>
+
+      <!-- ホーム -->
+      <div id="company-home" class="company-page space-y-10">
+        <section class="glass-card rounded-2xl p-8 md:p-10 flex flex-col md:flex-row gap-8">
+          <div class="md:w-1/2 space-y-4">
+            <p class="text-xs tracking-[0.22em] text-blue-600 uppercase">
+              越境EC向けコマースプラットフォーム
+            </p>
+            <h1 class="text-3xl md:text-4xl font-semibold tracking-tight text-slate-900">
+              日本企業のための<br class="hidden sm:block">
+              越境ECマルチチャネル基盤
+            </h1>
+            <p class="text-sm md:text-base text-slate-600 leading-relaxed">
+              企業公式サイト、販売者向けダッシュボード、そして消費者向けの商品公開サイトをワンストップで提供します。
+              多言語・多通貨に標準対応し、シンプルで信頼感のあるUIで日本のお客様をサポートします。
+            </p>
+            <div class="flex flex-wrap gap-3 pt-3">
+              <a href="#company-contact-form" class="inline-flex items-center justify-center px-4 py-2.5 rounded-full bg-blue-600 text-white text-sm font-medium shadow-sm hover:bg-blue-700">
+                無料相談・お問い合わせ
+              </a>
+              <button class="inline-flex items-center justify-center px-4 py-2.5 rounded-full bg-slate-100 text-slate-700 text-sm font-medium hover:bg-slate-200">
+                サービス資料（PDF）を確認
+              </button>
+            </div>
+            <dl class="grid grid-cols-2 gap-4 pt-4 text-xs text-slate-500">
+              <div>
+                <dt class="font-medium text-slate-700">対応言語</dt>
+                <dd>日本語 / 英語 / 中国語（簡体字）</dd>
+              </div>
+              <div>
+                <dt class="font-medium text-slate-700">決済通貨</dt>
+                <dd>日本円（JPY）、米ドル（USD）など</dd>
+              </div>
+              <div>
+                <dt class="font-medium text-slate-700">導入企業規模</dt>
+                <dd>中小企業〜上場企業まで</dd>
+              </div>
+              <div>
+                <dt class="font-medium text-slate-700">平均導入期間</dt>
+                <dd>約 6〜8 週間</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="md:w-1/2 grid grid-cols-2 gap-4 text-xs">
+            <div class="glass-card rounded-xl p-4 flex flex-col justify-between">
+              <div>
+                <p class="text-[10px] uppercase tracking-wide text-blue-600 mb-1">3.1 Company</p>
+                <p class="font-semibold text-slate-900 mb-1">企業公式サイト</p>
+                <p class="text-[11px] text-slate-600">
+                  Next.js と Tailwind による高速かつ信頼性の高いコーポレートサイト。SEO対策と多言語対応を標準で備えます。
+                </p>
+              </div>
+              <div class="mt-3 flex flex-wrap gap-1">
+                <span class="px-2 py-0.5 rounded-full bg-blue-50 text-[10px] text-blue-700">SSG / ISR 対応</span>
+                <span class="px-2 py-0.5 rounded-full bg-slate-50 text-[10px] text-slate-700">Metadata API</span>
+              </div>
+            </div>
+
+            <div class="glass-card rounded-xl p-4 flex flex-col justify-between">
+              <div>
+                <p class="text-[10px] uppercase tracking-wide text-emerald-600 mb-1">3.2 Dashboard</p>
+                <p class="font-semibold text-slate-900 mb-1">販売者ダッシュボード</p>
+                <p class="text-[11px] text-slate-600">
+                  next-auth を用いた安全な認証と、商品・注文・財務を一元管理できる運営画面を提供します。
+                </p>
+              </div>
+              <div class="mt-3 flex flex-wrap gap-1">
+                <span class="px-2 py-0.5 rounded-full bg-emerald-50 text-[10px] text-emerald-700">メール＋パスワード認証</span>
+                <span class="px-2 py-0.5 rounded-full bg-slate-50 text-[10px] text-slate-700">Cookie セッション</span>
+              </div>
+            </div>
+
+            <div class="glass-card rounded-xl p-4 flex flex-col justify-between">
+              <div>
+                <p class="text-[10px] uppercase tracking-wide text-indigo-600 mb-1">3.3 Shop</p>
+                <p class="font-semibold text-slate-900 mb-1">商品公開サイト</p>
+                <p class="text-[11px] text-slate-600">
+                  /shop/[shopId] 形式で各販売者ごとの商品一覧・詳細ページを自動生成し、消費者向けに公開します。
+                </p>
+              </div>
+              <div class="mt-3 flex flex-wrap gap-1">
+                <span class="px-2 py-0.5 rounded-full bg-indigo-50 text-[10px] text-indigo-700">多言語商品情報</span>
+                <span class="px-2 py-0.5 rounded-full bg-slate-50 text-[10px] text-slate-700">在庫・価格表示</span>
+              </div>
+            </div>
+
+            <div class="glass-card rounded-xl p-4 flex flex-col justify-between">
+              <div>
+                <p class="text-[10px] uppercase tracking-wide text-rose-600 mb-1">3.4 AI Assistant</p>
+                <p class="font-semibold text-slate-900 mb-1">AI アシスタント</p>
+                <p class="text-[11px] text-slate-600">
+                  翻訳支援と AI による商品提案機能をダッシュボードに統合し、運営担当者の作業を効率化します。
+                </p>
+              </div>
+              <div class="mt-3 flex flex-wrap gap-1">
+                <span class="px-2 py-0.5 rounded-full bg-rose-50 text-[10px] text-rose-700">AI翻訳</span>
+                <span class="px-2 py-0.5 rounded-full bg-slate-50 text-[10px] text-slate-700">AI商品提案</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- 会社案内 -->
+      <div id="company-company" class="company-page hidden space-y-6">
+        <section class="glass-card rounded-2xl p-8">
+          <h2 class="text-xl font-semibold text-slate-900 mb-2">会社概要</h2>
+          <p class="text-sm text-slate-600 leading-relaxed mb-6">
+            当社は、日本企業向けに越境EC・マルチテナント型コマースプラットフォームを提供するテクノロジーカンパニーです。
+            Next.js / React / TypeScript を中心としたモダンスタックと、Tailwind CSS・shadcn/ui を組み合わせることで、
+            シンプルで安心感のある管理画面を実現しています。
+          </p>
+          <div class="grid md:grid-cols-3 gap-6 text-sm">
+            <div>
+              <h3 class="text-xs font-semibold tracking-[0.2em] uppercase text-slate-400 mb-2">Company</h3>
+              <dl class="space-y-1 text-slate-700">
+                <div class="flex justify-between">
+                  <dt>会社名</dt><dd class="text-right">Example Commerce 株式会社</dd>
+                </div>
+                <div class="flex justify-between">
+                  <dt>所在地</dt><dd class="text-right">東京都◯◯区</dd>
+                </div>
+                <div class="flex justify-between">
+                  <dt>設立</dt><dd class="text-right">2024年</dd>
+                </div>
+              </dl>
+            </div>
+            <div>
+              <h3 class="text-xs font-semibold tracking-[0.2em] uppercase text-slate-400 mb-2">Mission</h3>
+              <p class="text-slate-700 text-sm">
+                日本から世界へ。<br>
+                中小企業でも無理なく越境ECに取り組める基盤を提供し、
+                言語・通貨・決済の壁をテクノロジーで解消することを目指します。
+              </p>
+            </div>
+            <div>
+              <h3 class="text-xs font-semibold tracking-[0.2em] uppercase text-slate-400 mb-2">Values</h3>
+              <ul class="space-y-1 text-slate-700 text-sm list-disc list-inside">
+                <li>Simple：分かりやすいUIと導入プロセス</li>
+                <li>Transparent：料金とデータの透明性</li>
+                <li>Reliable：日本語による丁寧なサポート</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- サービス -->
+      <div id="company-services" class="company-page hidden space-y-6">
+        <section class="glass-card rounded-2xl p-8">
+          <h2 class="text-xl font-semibold text-slate-900 mb-1">サービス概要</h2>
+          <p class="text-sm text-slate-600 mb-6">
+            3つのモジュールを組み合わせることで、貴社のフェーズに合わせた段階的な導入が可能です。
+            MVP から本番運用までを一気通貫で支援します。
+          </p>
+          <div class="grid md:grid-cols-3 gap-5 text-sm">
+            <div class="border border-slate-100 rounded-xl p-4 hover:border-blue-200 transition-colors">
+              <p class="text-xs font-semibold text-blue-600 mb-1">モジュール 1</p>
+              <h3 class="font-semibold text-slate-900 mb-1">企業公式サイト構築</h3>
+              <p class="text-slate-600 text-xs mb-2">
+                /, /company, /services, /cases, /contact など、企業サイトに必要なページを整備します。
+              </p>
+              <ul class="text-xs text-slate-600 space-y-1 list-disc list-inside">
+                <li>Next.js + Tailwind ベース</li>
+                <li>多言語対応（日本語・英語・中国語）</li>
+                <li>SEO最適化（Metadata API）</li>
+                <li>SSG / ISR による高速表示</li>
+              </ul>
+            </div>
+            <div class="border border-slate-100 rounded-xl p-4 hover:border-blue-200 transition-colors">
+              <p class="text-xs font-semibold text-emerald-600 mb-1">モジュール 2</p>
+              <h3 class="font-semibold text-slate-900 mb-1">販売者ダッシュボード</h3>
+              <p class="text-slate-600 text-xs mb-2">
+                /auth/login, /dashboard, /dashboard/products など、販売者向け管理画面を提供します。
+              </p>
+              <ul class="text-xs text-slate-600 space-y-1 list-disc list-inside">
+                <li>メール＋パスワード認証（next-auth）</li>
+                <li>商品管理・注文管理・財務ダッシュボード</li>
+                <li>AIアシスタントの統合（翻訳・商品提案）</li>
+              </ul>
+            </div>
+            <div class="border border-slate-100 rounded-xl p-4 hover:border-blue-200 transition-colors">
+              <p class="text-xs font-semibold text-indigo-600 mb-1">モジュール 3</p>
+              <h3 class="font-semibold text-slate-900 mb-1">商品公開サイト</h3>
+              <p class="text-slate-600 text-xs mb-2">
+                /shop/[shopId], /shop/[shopId]/product/[productId] 形式でマルチテナント構成を実現します。
+              </p>
+              <ul class="text-xs text-slate-600 space-y-1 list-disc list-inside">
+                <li>多言語の商品名・説明文の表示</li>
+                <li>価格・在庫・画像の表示</li>
+                <li>MVPでは「閲覧のみ」（決済は後続フェーズ）</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- 導入事例 -->
+      <div id="company-cases" class="company-page hidden space-y-6">
+        <section class="glass-card rounded-2xl p-6 md:p-8">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-4">
+            <div>
+              <h2 class="text-xl font-semibold text-slate-900 mb-1">導入事例一覧</h2>
+              <p class="text-sm text-slate-600">
+                実際にご利用いただいている企業様の事例をご紹介します。
+              </p>
+            </div>
+            <div class="flex items-center gap-2 text-xs">
+              <label class="text-slate-500">業種で絞り込み</label>
+              <select class="border border-slate-200 rounded-full px-3 py-1 text-xs bg-white">
+                <option>すべて</option>
+                <option>メーカー</option>
+                <option>D2Cブランド</option>
+                <option>卸売</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-5 text-sm">
+            <article class="case-card border border-slate-100 rounded-xl p-4 cursor-pointer hover:border-blue-200 hover:bg-blue-50/40 transition-colors" data-case-id="1">
+              <p class="text-xs text-blue-600 mb-1">事例 01</p>
+              <h3 class="font-semibold text-slate-900 mb-1">日系化粧品ブランド A 社</h3>
+              <p class="text-xs text-slate-600 mb-2">
+                北米向けに越境ECサイトを新規立ち上げ。多言語の商品ページとシンプルな商品管理機能により、運用負荷を抑えながら新規市場へ参入しました。
+              </p>
+              <p class="text-[11px] text-slate-500">導入モジュール：企業サイト / 販売者ダッシュボード / 商品公開サイト</p>
+            </article>
+            <article class="case-card border border-slate-100 rounded-xl p-4 cursor-pointer hover:border-blue-200 hover:bg-blue-50/40 transition-colors" data-case-id="2">
+              <p class="text-xs text-emerald-600 mb-1">事例 02</p>
+              <h3 class="font-semibold text-slate-900 mb-1">食品メーカー B 社</h3>
+              <p class="text-xs text-slate-600 mb-2">
+                アジア複数国向けに商品情報を多言語で配信。販売エリアごとの価格・在庫・支払い方法を管理画面から一括でコントロールしています。
+              </p>
+              <p class="text-[11px] text-slate-500">導入モジュール：販売者ダッシュボード / 商品公開サイト</p>
+            </article>
+            <article class="case-card border border-slate-100 rounded-xl p-4 cursor-pointer hover:border-blue-200 hover:bg-blue-50/40 transition-colors" data-case-id="3">
+              <p class="text-xs text-indigo-600 mb-1">事例 03</p>
+              <h3 class="font-semibold text-slate-900 mb-1">D2C ブランド C 社</h3>
+              <p class="text-xs text-slate-600 mb-2">
+                短期間でのローンチを重視し、第1段階では商品公開サイトのみを構築。
+                その後、販売者ダッシュボードや決済連携を段階的に追加しました。
+              </p>
+              <p class="text-[11px] text-slate-500">導入モジュール：企業サイト / 商品公開サイト（MVP）</p>
+            </article>
+          </div>
+
+          <!-- 事例詳細（/cases/[id] イメージ） -->
+          <div id="case-detail" class="mt-8 border-t border-slate-100 pt-6 hidden">
+            <h3 class="text-sm font-semibold text-slate-900 mb-2">事例詳細</h3>
+            <p class="text-xs text-slate-500 mb-4">
+              ※ 上のカードをクリックすると、ここに簡易的な事例詳細（/cases/[id]）が表示されるイメージです。
+            </p>
+            <div class="text-sm text-slate-700 space-y-2" id="case-detail-content">
+              <!-- JS で動的に挿入 -->
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- お問い合わせ -->
+      <div id="company-contact" class="company-page hidden space-y-6">
+        <section class="glass-card rounded-2xl p-8" id="company-contact-form">
+          <div class="mb-6">
+            <h2 class="text-xl font-semibold text-slate-900 mb-1">お問い合わせ</h2>
+            <p class="text-sm text-slate-600">
+              サービスに関するご相談・お見積り・デモのご依頼などは、以下のフォームよりお気軽にお問い合わせください。
+            </p>
+          </div>
+          <form class="grid md:grid-cols-2 gap-6 text-sm">
+            <div class="space-y-1 md:col-span-1">
+              <label class="block text-slate-700">お名前 <span class="text-rose-500">*</span></label>
+              <input type="text" class="w-full border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-slate-50" placeholder="山田 太郎" required>
+            </div>
+            <div class="space-y-1 md:col-span-1">
+              <label class="block text-slate-700">メールアドレス <span class="text-rose-500">*</span></label>
+              <input type="email" class="w-full border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-slate-50" placeholder="taro@example.co.jp" required>
+            </div>
+            <div class="space-y-1 md:col-span-1">
+              <label class="block text-slate-700">会社名</label>
+              <input type="text" class="w-full border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-slate-50" placeholder="Example Commerce 株式会社">
+            </div>
+            <div class="space-y-1 md:col-span-1">
+              <label class="block text-slate-700">ご希望の連絡言語</label>
+              <select class="w-full border border-slate-200 rounded-lg px-3 py-2 text-sm bg-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                <option>日本語での連絡を希望</option>
+                <option>英語での連絡を希望</option>
+                <option>中国語（簡体字）での連絡を希望</option>
+              </select>
+            </div>
+            <div class="space-y-1 md:col-span-2">
+              <label class="block text-slate-700">お問い合わせ内容 <span class="text-rose-500">*</span></label>
+              <textarea rows="5" class="w-full border border-slate-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-slate-50" placeholder="現在の課題や、実現したいことについて具体的にご記入ください。" required></textarea>
+            </div>
+            <div class="md:col-span-2 flex items-center justify-between text-xs text-slate-500">
+              <p>内容を確認のうえ、通常 2 営業日以内にご連絡差し上げます。</p>
+              <button type="submit" class="inline-flex items-center justify-center px-4 py-2 rounded-full bg-blue-600 text-white text-sm font-medium hover:bg-blue-700">
+                送信する
+              </button>
+            </div>
+          </form>
+        </section>
+      </div>
+    </section>
+
+    <!-- ================================== -->
+    <!-- 3.2 販売者ダッシュボード -->
+    <!-- ================================== -->
+    <section id="dashboard-section" class="hidden fade-in">
+      <div class="mb-4 flex items-center justify-between text-sm">
+        <span class="text-slate-500">販売者ダッシュボード</span>
+        <div class="flex items-center gap-3">
+          <span class="text-xs text-slate-500">ログイン中アカウント：demo@shop.jp</span>
+          <button class="text-xs text-slate-500 hover:text-slate-900">ログアウト</button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-[240px_minmax(0,1fr)] gap-6">
+        <!-- サイドバー -->
+        <aside class="glass-card rounded-2xl p-4 text-sm">
+          <h3 class="text-xs font-semibold text-slate-400 tracking-[0.2em] uppercase mb-3">メニュー</h3>
+          <nav class="space-y-1">
+            <button data-dash-tab="overview" class="dash-tab flex items-center w-full text-left px-3 py-2 rounded-lg bg-slate-900 text-white text-sm">
+              概要ダッシュボード
+            </button>
+            <button data-dash-tab="profile" class="dash-tab flex items-center w-full text-left px-3 py-2 rounded-lg text-slate-700 hover:bg-slate-100">
+              プロフィール
+            </button>
+            <button data-dash-tab="products" class="dash-tab flex items-center w-full text-left px-3 py-2 rounded-lg text-slate-700 hover:bg-slate-100">
+              商品一覧
+            </button>
+            <button data-dash-tab="orders" class="dash-tab flex items-center w-full text-left px-3 py-2 rounded-lg text-slate-700 hover:bg-slate-100">
+              注文一覧
+            </button>
+            <button data-dash-tab="finance" class="dash-tab flex items-center w-full text-left px-3 py-2 rounded-lg text-slate-700 hover:bg-slate-100">
+              財務サマリー
+            </button>
+          </nav>
+          <div class="mt-6 pt-4 border-t border-slate-100 text-xs text-slate-500">
+            <p class="mb-1">現在の表示言語：</p>
+            <p class="font-medium text-slate-700">日本語（ja）</p>
+          </div>
+        </aside>
+
+        <!-- コンテンツエリア -->
+        <div class="space-y-6">
+
+          <!-- ログイン / 新規登録（簡易） -->
+          <section class="grid md:grid-cols-2 gap-4 text-xs">
+            <div class="glass-card rounded-2xl p-4">
+              <h3 class="text-sm font-semibold text-slate-900 mb-3">/auth/login ログイン</h3>
+              <form class="space-y-2">
+                <div>
+                  <label class="block text-slate-700 mb-1">メールアドレス</label>
+                  <input type="email" class="w-full border border-slate-200 rounded-lg px-3 py-1.5 text-xs bg-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="shop-owner@example.jp">
+                </div>
+                <div>
+                  <label class="block text-slate-700 mb-1">パスワード</label>
+                  <input type="password" class="w-full border border-slate-200 rounded-lg px-3 py-1.5 text-xs bg-slate-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                <button type="button" class="mt-2 w-full inline-flex items-center justify-center px-3 py-1.5 rounded-full bg-slate-900 text-white text-xs font-medium">
+                  ログイン
+                </button>
+              </form>
+            </div>
+            <div class="glass-card rounded-2xl p-4">
+              <h3 class="text-sm font-semibold text-slate-900 mb-3">/auth/register 新規登録</h3>
+              <form class="space-y-2">
+                <div>
+                  <label class="block text-slate-700 mb-1">メールアドレス</label>
+                  <input type="email" class="w-full border border-slate-200 rounded-lg px-3 py-1.5 text-xs bg-slate-50">
+                </div>
+                <div>
+                  <label class="block text-slate-700 mb-1">パスワード</label>
+                  <input type="password" class="w-full border border-slate-200 rounded-lg px-3 py-1.5 text-xs bg-slate-50">
+                </div>
+                <div>
+                  <label class="block text-slate-700 mb-1">店舗名</label>
+                  <input type="text" class="w-full border border-slate-200 rounded-lg px-3 py-1.5 text-xs bg-slate-50">
+                </div>
+                <div>
+                  <label class="block text-slate-700 mb-1">表示言語の優先設定</label>
+                  <select class="w-full border border-slate-200 rounded-lg px-3 py-1.5 text-xs bg-slate-50">
+                    <option value="ja">日本語（優先）</option>
+                    <option value="en">英語（優先）</option>
+                    <option value="zh">中国語（簡体字）（優先）</option>
+                  </select>
+                </div>
+                <button type="button" class="mt-2 w-full inline-flex items-center justify-center px-3 py-1.5 rounded-full bg-blue-600 text-white text-xs font-medium">
+                  新規登録
+                </button>
+              </form>
+            </div>
+          </section>
+
+          <!-- 概要ダッシュボード -->
+          <section id="dash-overview" class="dash-page glass-card rounded-2xl p-6 space-y-5">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+              <div>
+                <h2 class="text-lg font-semibold text-slate-900 mb-1">ダッシュボード</h2>
+                <p class="text-xs text-slate-500">売上や注文状況などの主な指標を確認できます。</p>
+              </div>
+              <div class="flex items-center gap-2 text-xs">
+                <label class="text-slate-500">集計期間</label>
+                <select class="border border-slate-200 rounded-full px-3 py-1 bg-white">
+                  <option>直近30日</option>
+                  <option>今月</option>
+                  <option>先月</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-4 text-xs">
+              <div class="border border-slate-100 rounded-xl p-4">
+                <p class="text-slate-500 mb-1">総売上（JPY）</p>
+                <p class="text-xl font-semibold text-slate-900">¥1,280,000</p>
+                <p class="text-[11px] text-emerald-600 mt-1">前月比 +18.4%</p>
+              </div>
+              <div class="border border-slate-100 rounded-xl p-4">
+                <p class="text-slate-500 mb-1">注文数</p>
+                <p class="text-xl font-semibold text-slate-900">324件</p>
+                <p class="text-[11px] text-emerald-600 mt-1">前月比 +12.1%</p>
+              </div>
+              <div class="border border-slate-100 rounded-xl p-4">
+                <p class="text-slate-500 mb-1">平均注文単価</p>
+                <p class="text-xl font-semibold text-slate-900">¥3,950</p>
+                <p class="text-[11px] text-slate-500 mt-1">全チャネル平均</p>
+              </div>
+              <div class="border border-slate-100 rounded-xl p-4">
+                <p class="text-slate-500 mb-1">未処理の注文</p>
+                <p class="text-xl font-semibold text-slate-900">12件</p>
+                <p class="text-[11px] text-amber-600 mt-1">出荷処理が必要です</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- プロフィール -->
+          <section id="dash-profile" class="dash-page glass-card rounded-2xl p-6 hidden text-sm">
+            <h2 class="text-lg font-semibold text-slate-900 mb-4">プロフィール設定</h2>
+            <form class="grid md:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-slate-700 mb-1">店舗名</label>
+                <input type="text" class="w-full border border-slate-200 rounded-lg px-3 py-2 text-sm bg-slate-50" value="デモショップ東京">
+              </div>
+              <div>
+                <label class="block text-slate-700 mb-1">メールアドレス</label>
+                <input type="email" class="w-full border border-slate-200 rounded-lg px-3 py-2 text-sm bg-slate-50" value="demo@shop.jp">
+              </div>
+              <div>
+                <label class="block text-slate-700 mb-1">表示言語の優先設定</label>
+                <select class="w-full border border-slate-200 rounded-lg px-3 py-2 text-sm bg-slate-50">
+                  <option>日本語（ja）</option>
+                  <option>英語（en）</option>
+                  <option>中国語（簡体字）（zh）</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-slate-700 mb-1">会社情報</label>
+                <input type="text" class="w-full border border-slate-200 rounded-lg px-3 py-2 text-sm bg-slate-50" placeholder="会社名・住所などを入力してください">
+              </div>
+              <div class="md:col-span-2 flex justify-end pt-2">
+                <button type="button" class="px-4 py-2 rounded-full bg-blue-600 text-white text-sm font-medium">変更を保存する</button>
+              </div>
+            </form>
+          </section>
+
+          <!-- 商品一覧 -->
+          <section id="dash-products" class="dash-page glass-card rounded-2xl p-6 hidden text-xs">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-4">
+              <div>
+                <h2 class="text-sm font-semibold text-slate-900">商品一覧</h2>
+                <p class="text-[11px] text-slate-500">現在ログインしている店舗に紐づく商品のみが表示されます。</p>
+              </div>
+              <div class="flex flex-wrap items-center gap-2">
+                <input type="text" placeholder="商品名で検索" class="border border-slate-200 rounded-full px-3 py-1 bg-white">
+                <select class="border border-slate-200 rounded-full px-3 py-1 bg-white">
+                  <option>すべてのステータス</option>
+                  <option>販売中（上架）</option>
+                  <option>販売停止（下架）</option>
+                </select>
+                <button class="px-3 py-1 rounded-full bg-blue-600 text-white text-xs font-medium">
+                  新規商品を追加
+                </button>
+              </div>
+            </div>
+
+            <div class="border border-slate-100 rounded-xl overflow-hidden bg-white">
+              <table class="w-full text-left">
+                <thead class="bg-slate-50 text-[11px] text-slate-500 uppercase">
+                  <tr>
+                    <th class="px-3 py-2">商品名（日本語）</th>
+                    <th class="px-3 py-2">SKU</th>
+                    <th class="px-3 py-2">価格</th>
+                    <th class="px-3 py-2">在庫</th>
+                    <th class="px-3 py-2">販売エリア</th>
+                    <th class="px-3 py-2">ステータス</th>
+                    <th class="px-3 py-2 text-right">操作</th>
+                  </tr>
+                </thead>
+                <tbody class="text-[11px] text-slate-700">
+                  <tr class="border-t border-slate-100">
+                    <td class="px-3 py-2">
+                      <div class="font-medium">高保湿フェイスクリーム</div>
+                      <div class="text-[10px] text-slate-400">
+                        他言語の商品名・説明文は「商品翻訳」機能から登録できます。
+                      </div>
+                    </td>
+                    <td class="px-3 py-2">FC-001</td>
+                    <td class="px-3 py-2">¥3,980 JPY</td>
+                    <td class="px-3 py-2">128</td>
+                    <td class="px-3 py-2">日本（JP）, 米国（US）</td>
+                    <td class="px-3 py-2">
+                      <span class="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 text-[10px]">販売中</span>
+                    </td>
+                    <td class="px-3 py-2 text-right">
+                      <button class="px-2 py-1 rounded-full bg-slate-100 hover:bg-slate-200">編集</button>
+                    </td>
+                  </tr>
+                  <tr class="border-t border-slate-100">
+                    <td class="px-3 py-2">
+                      <div class="font-medium">クレンジングジェル</div>
+                      <div class="text-[10px] text-slate-400">
+                        多言語情報は product_translations テーブルで管理します。
+                      </div>
+                    </td>
+                    <td class="px-3 py-2">CL-023</td>
+                    <td class="px-3 py-2">¥2,480 JPY</td>
+                    <td class="px-3 py-2">64</td>
+                    <td class="px-3 py-2">日本（JP）</td>
+                    <td class="px-3 py-2">
+                      <span class="px-2 py-0.5 rounded-full bg-slate-100 text-slate-700 text-[10px]">販売停止</span>
+                    </td>
+                    <td class="px-3 py-2 text-right">
+                      <button class="px-2 py-1 rounded-full bg-slate-100 hover:bg-slate-200">編集</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="mt-3 flex items-center justify-between text-[11px] text-slate-500">
+              <p>全 24 件中 1〜10 件を表示</p>
+              <div class="flex items-center gap-1">
+                <button class="px-2 py-1 rounded bg-slate-100">前へ</button>
+                <button class="px-2 py-1 rounded bg-slate-900 text-white">1</button>
+                <button class="px-2 py-1 rounded bg-slate-100">2</button>
+                <button class="px-2 py-1 rounded bg-slate-100">次へ</button>
+              </div>
+            </div>
+          </section>
+
+          <!-- 注文一覧 -->
+          <section id="dash-orders" class="dash-page glass-card rounded-2xl p-6 hidden text-xs">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-4">
+              <div>
+                <h2 class="text-sm font-semibold text-slate-900">注文一覧</h2>
+                <p class="text-[11px] text-slate-500">注文のステータスを一元管理できます。</p>
+              </div>
+              <div class="flex flex-wrap items-center gap-2">
+                <select class="border border-slate-200 rounded-full px-3 py-1 bg-white">
+                  <option>すべてのステータス</option>
+                  <option>未決済（pending）</option>
+                  <option>支払い済み（paid）</option>
+                  <option>発送済み（shipped）</option>
+                  <option>完了（completed）</option>
+                  <option>キャンセル（canceled）</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="border border-slate-100 rounded-xl overflow-hidden bg-white">
+              <table class="w-full text-left">
+                <thead class="bg-slate-50 text-[11px] text-slate-500 uppercase">
+                  <tr>
+                    <th class="px-3 py-2">注文番号</th>
+                    <th class="px-3 py-2">注文日時</th>
+                    <th class="px-3 py-2">購入者</th>
+                    <th class="px-3 py-2">金額</th>
+                    <th class="px-3 py-2">ステータス</th>
+                    <th class="px-3 py-2 text-right">操作</th>
+                  </tr>
+                </thead>
+                <tbody class="text-[11px] text-slate-700">
+                  <tr class="border-t border-slate-100">
+                    <td class="px-3 py-2">ORD-20240201-001</td>
+                    <td class="px-3 py-2">2024-02-01 10:24</td>
+                    <td class="px-3 py-2">佐藤 花子</td>
+                    <td class="px-3 py-2">¥12,840</td>
+                    <td class="px-3 py-2">
+                      <span class="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 text-[10px]">支払い済み</span>
+                    </td>
+                    <td class="px-3 py-2 text-right">
+                      <button class="px-2 py-1 rounded-full bg-slate-100 hover:bg-slate-200">詳細</button>
+                    </td>
+                  </tr>
+                  <tr class="border-t border-slate-100">
+                    <td class="px-3 py-2">ORD-20240201-002</td>
+                    <td class="px-3 py-2">2024-02-01 11:05</td>
+                    <td class="px-3 py-2">山本 太郎</td>
+                    <td class="px-3 py-2">¥4,380</td>
+                    <td class="px-3 py-2">
+                      <span class="px-2 py-0.5 rounded-full bg-amber-50 text-amber-700 text-[10px]">未決済</span>
+                    </td>
+                    <td class="px-3 py-2 text-right">
+                      <button class="px-2 py-1 rounded-full bg-slate-100 hover:bg-slate-200">詳細</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- 財務サマリー -->
+          <section id="dash-finance" class="dash-page glass-card rounded-2xl p-6 hidden text-xs">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-4">
+              <div>
+                <h2 class="text-sm font-semibold text-slate-900">財務サマリー</h2>
+                <p class="text-[11px] text-slate-500">売上やステータス別の件数を簡易的に確認できます。</p>
+              </div>
+              <button class="px-3 py-1 rounded-full border border-slate-200 bg-white hover:bg-slate-50">
+                CSVでダウンロード
+              </button>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-4 mb-4">
+              <div class="border border-slate-100 rounded-xl p-4">
+                <p class="text-slate-500 mb-1">累計総売上</p>
+                <p class="text-lg font-semibold text-slate-900">¥8,420,000</p>
+              </div>
+              <div class="border border-slate-100 rounded-xl p-4">
+                <p class="text-slate-500 mb-1">期間内注文数</p>
+                <p class="text-lg font-semibold text-slate-900">856件</p>
+              </div>
+              <div class="border border-slate-100 rounded-xl p-4">
+                <p class="text-slate-500 mb-1">期間内売上合計</p>
+                <p class="text-lg font-semibold text-slate-900">¥1,980,000</p>
+              </div>
+            </div>
+
+            <div class="border border-slate-100 rounded-xl p-4 bg-white">
+              <h3 class="text-[11px] font-semibold text-slate-700 mb-2">ステータス別内訳</h3>
+              <div class="grid md:grid-cols-5 gap-3">
+                <div>
+                  <p class="text-[11px] text-slate-500 mb-1">完了（completed）</p>
+                  <p class="text-sm font-semibold text-emerald-700">654 件</p>
+                </div>
+                <div>
+                  <p class="text-[11px] text-slate-500 mb-1">支払い済み（paid）</p>
+                  <p class="text-sm font-semibold text-blue-700">98 件</p>
+                </div>
+                <div>
+                  <p class="text-[11px] text-slate-500 mb-1">発送済み（shipped）</p>
+                  <p class="text-sm font-semibold text-slate-700">50 件</p>
+                </div>
+                <div>
+                  <p class="text-[11px] text-slate-500 mb-1">未決済（pending）</p>
+                  <p class="text-sm font-semibold text-amber-700">32 件</p>
+                </div>
+                <div>
+                  <p class="text-[11px] text-slate-500 mb-1">キャンセル・返金</p>
+                  <p class="text-sm font-semibold text-rose-700">22 件</p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================== -->
+    <!-- 3.3 商品公開サイト（消費者向け） -->
+    <!-- ================================== -->
+    <section id="shop-section" class="hidden fade-in">
+      <div class="mb-4 flex items-center justify-between text-sm">
+        <span class="text-slate-500">商品公開サイト /shop/[shopId]</span>
+        <div class="flex items-center gap-2 text-xs">
+          <span class="text-slate-500">ブラウザの言語設定を参考に表示言語を決定（未設定時は日本語）</span>
+        </div>
+      </div>
+
+      <section class="glass-card rounded-2xl p-6 md:p-8">
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
+          <div>
+            <p class="text-[11px] text-blue-600 mb-1">ショップID：shop-123</p>
+            <h2 class="text-xl font-semibold text-slate-900">デモショップ東京</h2>
+            <p class="text-xs text-slate-500">
+              こちらは /shop/[shopId] の画面イメージです。MVP段階では「閲覧のみ」を実装し、注文・決済は後続フェーズで追加します。
+            </p>
+          </div>
+          <div class="flex flex-wrap items-center gap-2 text-xs">
+            <select class="border border-slate-200 rounded-full px-3 py-1 bg-white">
+              <option>すべてのカテゴリ</option>
+              <option>スキンケア</option>
+              <option>ヘアケア</option>
+            </select>
+            <select class="border border-slate-200 rounded-full px-3 py-1 bg-white">
+              <option>おすすめ順</option>
+              <option>価格が安い順</option>
+              <option>価格が高い順</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- 商品一覧 -->
+        <div class="grid md:grid-cols-3 gap-5 text-sm">
+          <!-- 商品カード -->
+          <article class="border border-slate-100 rounded-xl overflow-hidden bg-white hover:border-blue-200 transition-colors">
+            <div class="h-40 bg-gradient-to-br from-blue-100 to-indigo-100 flex items-center justify-center text-xs text-blue-700">
+              商品画像（サンプル）
+            </div>
+            <div class="p-4 space-y-1">
+              <p class="text-xs text-slate-400">商品詳細ページ：/shop/[shopId]/product/1</p>
+              <h3 class="font-semibold text-slate-900">高保湿フェイスクリーム</h3>
+              <p class="text-[11px] text-slate-500">
+                英語・中国語など、閲覧ユーザーの言語に合わせた商品名・説明文を表示できます。
+              </p>
+              <p class="text-sm font-semibold text-slate-900 mt-1">¥3,980 <span class="text-[11px] text-slate-500">（税込・JPY）</span></p>
+              <p class="text-[11px] text-emerald-700">在庫あり</p>
+            </div>
+          </article>
+
+          <article class="border border-slate-100 rounded-xl overflow-hidden bg-white hover:border-blue-200 transition-colors">
+            <div class="h-40 bg-gradient-to-br from-emerald-100 to-teal-100 flex items-center justify-center text-xs text-emerald-700">
+              商品画像（サンプル）
+            </div>
+            <div class="p-4 space-y-1">
+              <p class="text-xs text-slate-400">商品詳細ページ：/shop/[shopId]/product/2</p>
+              <h3 class="font-semibold text-slate-900">クレンジングジェル</h3>
+              <p class="text-[11px] text-slate-500">
+                多言語の商品説明は管理画面から登録・更新できます。
+              </p>
+              <p class="text-sm font-semibold text-slate-900 mt-1">¥2,480 <span class="text-[11px] text-slate-500">（税込・JPY）</span></p>
+              <p class="text-[11px] text-amber-700">在庫わずか</p>
+            </div>
+          </article>
+
+          <article class="border border-slate-100 rounded-xl overflow-hidden bg-white hover:border-blue-200 transition-colors">
+            <div class="h-40 bg-gradient-to-br from-rose-100 to-orange-100 flex items-center justify-center text-xs text-rose-700">
+              商品画像（サンプル）
+            </div>
+            <div class="p-4 space-y-1">
+              <p class="text-xs text-slate-400">商品詳細ページ：/shop/[shopId]/product/3</p>
+              <h3 class="font-semibold text-slate-900">UV プロテクトミルク</h3>
+              <p class="text-[11px] text-slate-500">
+                在庫数・表示価格はダッシュボードからリアルタイムに更新されます。
+              </p>
+              <p class="text-sm font-semibold text-slate-900 mt-1">¥3,280 <span class="text-[11px] text-slate-500">（税込・JPY）</span></p>
+              <p class="text-[11px] text-slate-500">在庫：24</p>
+            </div>
+          </article>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <!-- ======================= -->
+  <!-- 3.4 AI アシスタント（ダッシュボード内） -->
+  <!-- ======================= -->
+  <button id="ai-assistant-button" class="hidden fixed bottom-5 right-5 z-30 px-4 py-2 rounded-full bg-slate-900 text-white text-xs shadow-lg hover:bg-slate-800">
+    AI アシスタント
+  </button>
+
+  <div id="ai-assistant-modal" class="hidden fixed inset-0 z-40 flex items-end justify-end sm:items-center sm:justify-center bg-black/20">
+    <div class="glass-card w-full max-w-md rounded-t-2xl sm:rounded-2xl p-4 sm:p-5 shadow-xl">
+      <div class="flex items-center justify-between mb-3">
+        <div>
+          <p class="text-xs text-slate-500">ダッシュボード用 AI アシスタント</p>
+          <h3 class="text-sm font-semibold text-slate-900">AI アシスタント</h3>
+        </div>
+        <button id="ai-assistant-close" class="text-slate-400 hover:text-slate-700 text-xl leading-none">&times;</button>
+      </div>
+
+      <div class="mb-3 flex gap-2 text-xs">
+        <button data-ai-tab="translate" class="ai-tab px-3 py-1 rounded-full bg-slate-900 text-white">
+          AI翻訳モード
+        </button>
+        <button data-ai-tab="product" class="ai-tab px-3 py-1 rounded-full text-slate-700 hover:bg-slate-100">
+          AI商品提案モード
+        </button>
+      </div>
+
+      <!-- AI翻訳モード -->
+      <div id="ai-tab-translate" class="ai-page space-y-3 text-xs">
+        <div class="flex flex-wrap items-center gap-2">
+          <div>
+            <label class="block text-slate-600 mb-1">翻訳元の言語</label>
+            <select class="border border-slate-200 rounded-full px-3 py-1 bg-white">
+              <option>自動判定</option>
+              <option>日本語</option>
+              <option>英語</option>
+              <option>中国語（簡体字）</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-slate-600 mb-1">翻訳先の言語</label>
+            <select class="border border-slate-200 rounded-full px-3 py-1 bg-white">
+              <option>日本語（ja）</option>
+              <option>英語（en）</option>
+              <option>中国語（簡体字）（zh）</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <label class="block text-slate-600 mb-1">翻訳したいテキスト</label>
+          <textarea rows="4" class="w-full border border-slate-200 rounded-lg px-3 py-2 text-xs bg-slate-50" placeholder="商品説明やキャンペーン文言などを入力してください。"></textarea>
+        </div>
+        <div class="flex items-center justify-between">
+          <button class="px-3 py-1.5 rounded-full bg-blue-600 text-white text-xs">翻訳を実行</button>
+          <button class="px-3 py-1.5 rounded-full border border-slate-200 text-slate-700 text-xs">結果をコピー</button>
+        </div>
+        <div>
+          <p class="text-[11px] text-slate-500 mb-1">翻訳結果（サンプル）</p>
+          <div class="border border-dashed border-slate-300 rounded-lg px-3 py-2 text-xs text-slate-700 bg-white/60">
+            ここに翻訳結果が表示されます。実装時にはバックエンドの AI API と連携して、実際の翻訳を取得してください。
+          </div>
+        </div>
+      </div>
+
+      <!-- AI商品提案モード -->
+      <div id="ai-tab-product" class="ai-page hidden space-y-3 text-xs">
+        <div class="grid grid-cols-2 gap-2">
+          <div>
+            <label class="block text-slate-600 mb-1">主な取扱カテゴリ</label>
+            <input type="text" class="w-full border border-slate-200 rounded-lg px-3 py-1.5 text-xs bg-slate-50" placeholder="例：スキンケア">
+          </div>
+          <div>
+            <label class="block text-slate-600 mb-1">想定する顧客層</label>
+            <input type="text" class="w-full border border-slate-200 rounded-lg px-3 py-1.5 text-xs bg-slate-50" placeholder="例：20〜30代女性">
+          </div>
+          <div>
+            <label class="block text-slate-600 mb-1">目安の価格帯</label>
+            <input type="text" class="w-full border border-slate-200 rounded-lg px-3 py-1.5 text-xs bg-slate-50" placeholder="例：¥2,000〜¥5,000">
+          </div>
+          <div>
+            <label class="block text-slate-600 mb-1">販売エリア</label>
+            <input type="text" class="w-full border border-slate-200 rounded-lg px-3 py-1.5 text-xs bg-slate-50" placeholder='例："JP", "US" など'>
+          </div>
+        </div>
+        <button class="px-3 py-1.5 rounded-full bg-blue-600 text-white text-xs">AI商品提案を生成</button>
+        <div>
+          <p class="text-[11px] text-slate-500 mb-1">AIによる商品提案（サンプル）</p>
+          <div class="border border-dashed border-slate-300 rounded-lg px-3 py-2 text-xs text-slate-700 bg-white/60 space-y-2">
+            <p class="font-semibold">おすすめの方向性：</p>
+            <ul class="list-disc list-inside">
+              <li>高保湿・低刺激のベーシックスキンケアライン</li>
+              <li>旅行用のトラベルサイズセット商品</li>
+            </ul>
+            <p class="font-semibold mt-1">商品説明文サンプル（日本語）：</p>
+            <p>
+              「忙しい毎日の中でも、肌本来のうるおいを守りたい方へ。
+              日本生まれの低刺激処方で、乾燥やつっぱり感をやさしくケアするスキンケアシリーズです。」
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 簡単なインタラクションスクリプト -->
+  <script>
+    // メインタブ切り替え
+    const mainTabs = document.querySelectorAll('.main-tab');
+    const mainSections = {
+      company: document.getElementById('company-section'),
+      dashboard: document.getElementById('dashboard-section'),
+      shop: document.getElementById('shop-section'),
+    };
+    const aiButton = document.getElementById('ai-assistant-button');
+
+    mainTabs.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.mainTab;
+        Object.values(mainSections).forEach(sec => sec.classList.add('hidden'));
+        mainSections[target].classList.remove('hidden');
+
+        mainTabs.forEach(b => b.classList.remove('border-slate-900','text-slate-900'));
+        btn.classList.add('border-slate-900','text-slate-900');
+
+        // AIアシスタントボタンはダッシュボードのときのみ表示
+        if (target === 'dashboard') {
+          aiButton.classList.remove('hidden');
+        } else {
+          aiButton.classList.add('hidden');
+        }
+      });
+    });
+    // デフォルトは企業サイト
+    mainSections.company.classList.remove('hidden');
+
+    // 企業サイト内タブ
+    const companyTabs = document.querySelectorAll('.company-tab');
+    const companyPages = {
+      home: document.getElementById('company-home'),
+      company: document.getElementById('company-company'),
+      services: document.getElementById('company-services'),
+      cases: document.getElementById('company-cases'),
+      contact: document.getElementById('company-contact'),
+    };
+    companyTabs.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.companyTab;
+        Object.values(companyPages).forEach(sec => sec.classList.add('hidden'));
+        companyPages[target].classList.remove('hidden');
+
+        companyTabs.forEach(b => b.classList.remove('bg-slate-900','text-white'));
+        btn.classList.add('bg-slate-900','text-white');
+      });
+    });
+
+    // ダッシュボード内タブ
+    const dashTabs = document.querySelectorAll('.dash-tab');
+    const dashPages = {
+      overview: document.getElementById('dash-overview'),
+      profile: document.getElementById('dash-profile'),
+      products: document.getElementById('dash-products'),
+      orders: document.getElementById('dash-orders'),
+      finance: document.getElementById('dash-finance'),
+    };
+    dashTabs.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.dashTab;
+        Object.values(dashPages).forEach(sec => sec.classList.add('hidden'));
+        dashPages[target].classList.remove('hidden');
+
+        dashTabs.forEach(b => b.classList.remove('bg-slate-900','text-white'));
+        btn.classList.add('bg-slate-900','text-white');
+      });
+    });
+
+    // 導入事例の簡易詳細表示
+    const caseCards = document.querySelectorAll('.case-card');
+    const caseDetail = document.getElementById('case-detail');
+    const caseDetailContent = document.getElementById('case-detail-content');
+    const caseData = {
+      1: {
+        title: '日系化粧品ブランド A 社',
+        content: '北米向けの新規越境ECとして、企業サイト・販売者ダッシュボード・商品公開サイトを一括導入しました。初期フェーズでは MVP として閲覧と簡易管理のみを実装し、その後段階的に決済連携を追加しました。'
+      },
+      2: {
+        title: '食品メーカー B 社',
+        content: 'アジア複数国向けに多言語商品ページを展開。product_translations テーブルで商品名・説明文を管理し、各販売エリアごとに価格・在庫・支払い方法を制御しています。'
+      },
+      3: {
+        title: 'D2C ブランド C 社',
+        content: 'スピーディーなローンチを目的に、/shop/[shopId] の商品公開ページから先に構築。将来的にサブスクリプション機能やロイヤリティプログラムと連携できる拡張性を確保しています。'
+      }
+    };
+    caseCards.forEach(card => {
+      card.addEventListener('click', () => {
+        const id = card.dataset.caseId;
+        caseDetail.classList.remove('hidden');
+        caseDetailContent.innerHTML = `
+          <h4 class="font-semibold">${caseData[id].title}</h4>
+          <p class="mt-1 text-sm text-slate-700">${caseData[id].content}</p>
+        `;
+      });
+    });
+
+    // AIアシスタント開閉
+    const aiModal = document.getElementById('ai-assistant-modal');
+    const aiClose = document.getElementById('ai-assistant-close');
+    aiButton.addEventListener('click', () => {
+      aiModal.classList.remove('hidden');
+    });
+    aiClose.addEventListener('click', () => {
+      aiModal.classList.add('hidden');
+    });
+    aiModal.addEventListener('click', (e) => {
+      if (e.target === aiModal) aiModal.classList.add('hidden');
+    });
+
+    // AIアシスタントのタブ切り替え
+    const aiTabs = document.querySelectorAll('.ai-tab');
+    const aiPages = {
+      translate: document.getElementById('ai-tab-translate'),
+      product: document.getElementById('ai-tab-product'),
+    };
+    aiTabs.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.aiTab;
+        Object.values(aiPages).forEach(sec => sec.classList.add('hidden'));
+        aiPages[target].classList.remove('hidden');
+
+        aiTabs.forEach(b => b.classList.remove('bg-slate-900','text-white'));
+        btn.classList.add('bg-slate-900','text-white');
+      });
+    });
+
+    // 表示言語ボタン（デモ用・実際の多言語実装は Next.js 側で）
+    const langBtns = document.querySelectorAll('.lang-btn');
+    langBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        langBtns.forEach(b => b.classList.remove('bg-blue-600','text-white'));
+        btn.classList.add('bg-blue-600','text-white');
+        alert('このデモは静的HTMLです。実際のプロジェクトでは Next.js の i18n や next-intl で多言語対応を実装してください。');
+      });
+    });
+  </script>
+</body>
+</html>
