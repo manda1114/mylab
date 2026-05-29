@@ -1,0 +1,27 @@
+model = "gpt-5.4"
+model_provider = "azure"
+
+[model_providers.azure]
+name = "Azure OpenAI"
+base_url = "https://kbtt-labo-aoai-eastus2.openai.azure.com/openai/v1"
+env_key = "AZURE_OPENAI_API_KEY"
+wire_api = "responses"
+
+# オプション設定
+preferred_auth_method = "apikey"
+model_reasoning_effort = "low"
+model_reasoning_summary = "auto"
+
+# MCP
+experimental_use_rmcp_client = true
+[mcp_servers.microsoft_learn_docs]
+url = "https://learn.microsoft.com/api/mcp"
+
+[projects."/home/azureuser/coding-agent-hands-on"]
+trust_level = "trusted"
+
+[projects."/home/azureuser/ai-assistant"]
+trust_level = "trusted"
+
+[tui.model_availability_nux]
+"gpt-5.5" = 4
